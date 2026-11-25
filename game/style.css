@@ -1,0 +1,47 @@
+/* Simmer & Serve — page chrome only; the game draws itself on the canvas. */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #241811;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+canvas {
+  width: min(1280px, 96vw);
+  height: auto;
+  aspect-ratio: 1280 / 800;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+  background: #3d2b1f;
+}
+
+.hint {
+  color: #c9a98f;
+  font: 13px system-ui, sans-serif;
+  margin: 12px 0 0;
+}
+
+/* Screenshot mode (?shot=…): the canvas alone fills the frame exactly. */
+body.shot main {
+  padding: 0;
+}
+
+body.shot .hint {
+  display: none;
+}
+
+body.shot canvas {
+  width: 1280px;
+  border-radius: 0;
+  box-shadow: none;
+}
